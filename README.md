@@ -1,4 +1,4 @@
-![Packagist](https://img.shields.io/packagist/v/cloudrail/library-php.svg)
+![Packagist](https://img.shields.io/packagist/v/CloudRail/library-php.svg)
 <p align="center">
   <img width="200px" src="http://cloudrail.github.io/img/cloudrail_logo_github.png"/>
 </p>
