@@ -1,6 +1,5 @@
 {
   "name": "cloudrail/library-php",
-  "version": "0.1.2",
   "description": "Unified API Library for: Cloud Storage, Social Log-In, Social Interaction, Payment, Email, SMS, POIs, Video & Messaging. Included services are Dropbox, Google Drive, OneDrive, OneDrive for Business, Box, Egnyte, PayPal, Stripe,  Google Places, Foursquare, Yelp, YouTube, Vimeo, Twitch, Facebook Messenger, Telegram, Line, Viber, Facebook, GitHub, Google+, LinkedIn, Slack, Twitter, Windows Live, Yahoo, Mailjet, Sendgrid, Twilio, Nexmo, Twizo.",
   "type": "library",
   "license": "proprietary",

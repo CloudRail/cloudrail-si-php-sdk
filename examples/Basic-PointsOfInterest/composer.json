@@ -1,0 +1,8 @@
+{
+
+  "name": "cloudrail/sample-poi",
+  "version": "1.0.0",
+  "require": {
+    "cloudrail/library-php": "^0.1.0"
+  }
+}
