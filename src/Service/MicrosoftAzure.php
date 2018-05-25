@@ -448,16 +448,17 @@ class MicrosoftAzure implements BusinessCloudStorage, AdvancedRequestSupporter
 			["string.split", '$L1', '$L0.1', "&"],
 			["size", '$L2', '$L1'],
 			["create", '$L3', "Number", 0],
-			["if<than", '$L3', '$L2', 11],
+			["if<than", '$L3', '$L2', 10],
 			["get", '$L4', '$L1', '$L3'],
 			["string.split", '$L5', '$L4', "="],
+			["size", '$L10', '$L5'],
 			["if>than", '$L10', 1, 3],
 			["get", '$L11', '$L5', 0],
 			["get", '$L12', '$L5', 1],
 			["string.concat", '$L6', '$L11', ":", '$L12'],
 			["string.concat", '$P1', '$P1', "\n", '$L6'],
 			["math.add", '$L3', '$L3', 1],
-			["jumpRel", -12]
+			["jumpRel", -11]
 		],
 		'signedString' => [
 			["object.getKeyArray", '$L0', '$P3'],

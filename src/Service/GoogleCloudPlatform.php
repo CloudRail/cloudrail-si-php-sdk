@@ -165,7 +165,8 @@ class GoogleCloudPlatform implements BusinessCloudStorage, AdvancedRequestSuppor
 			["callFunc", "checkAuthentication", '$P0'],
 			["create", '$L0', "Object"],
 			["set", '$L0.method', "GET"],
-			["string.concat", '$L0.url', '$P0.storageBase', "/b/", '$P2.name', "/o/", '$P3'],
+			["callFunc", "encodeObjectName", '$P0', '$L3', '$P3'],
+			["string.concat", '$L0.url', '$P0.storageBase', "/b/", '$P2.name', "/o/", '$L3'],
 			["create", '$L0.requestHeaders', "Object"],
 			["string.concat", '$L0.requestHeaders.Authorization', "Bearer ", '$P0.accessToken'],
 			["http.requestCall", '$L1', '$L0'],
@@ -179,7 +180,8 @@ class GoogleCloudPlatform implements BusinessCloudStorage, AdvancedRequestSuppor
 			["callFunc", "checkAuthentication", '$P0'],
 			["create", '$L0', "Object"],
 			["set", '$L0.method', "DELETE"],
-			["string.concat", '$L0.url', '$P0.storageBase', "/b/", '$P2.name', "/o/", '$P1'],
+			["callFunc", "encodeObjectName", '$P0', '$L2', '$P1'],
+			["string.concat", '$L0.url', '$P0.storageBase', "/b/", '$P2.name', "/o/", '$L2'],
 			["create", '$L0.requestHeaders', "Object"],
 			["string.concat", '$L0.requestHeaders.Authorization', "Bearer ", '$P0.accessToken'],
 			["http.requestCall", '$L1', '$L0'],
@@ -191,7 +193,8 @@ class GoogleCloudPlatform implements BusinessCloudStorage, AdvancedRequestSuppor
 			["callFunc", "checkNull", '$P0', '$P3'],
 			["callFunc", "checkSize", '$P0', '$P4'],
 			["callFunc", "checkAuthentication", '$P0'],
-			["callFunc", "initUpload", '$P0', '$L0', '$P1', '$P2'],
+			["callFunc", "encodeObjectName", '$P0', '$L1', '$P2'],
+			["callFunc", "initUpload", '$P0', '$L0', '$P1', '$L1'],
 			["callFunc", "performUpload", '$P0', '$L0', '$P3', '$P4']
 		],
 		'downloadFile' => [
@@ -200,7 +203,8 @@ class GoogleCloudPlatform implements BusinessCloudStorage, AdvancedRequestSuppor
 			["callFunc", "checkAuthentication", '$P0'],
 			["create", '$L0', "Object"],
 			["set", '$L0.method', "GET"],
-			["string.concat", '$L0.url', '$P0.storageBase', "/b/", '$P3.name', "/o/", '$P2', "?alt=media"],
+			["callFunc", "encodeObjectName", '$P0', '$L2', '$P2'],
+			["string.concat", '$L0.url', '$P0.storageBase', "/b/", '$P3.name', "/o/", '$L2', "?alt=media"],
 			["create", '$L0.requestHeaders', "Object"],
 			["string.concat", '$L0.requestHeaders.Authorization', "Bearer ", '$P0.accessToken'],
 			["http.requestCall", '$L1', '$L0'],
@@ -335,6 +339,24 @@ class GoogleCloudPlatform implements BusinessCloudStorage, AdvancedRequestSuppor
 			["if<than", '$P1', 0, 2],
 			["create", '$L0', "Error", "Size can not be negative.", "IllegalArgument"],
 			["throwError", '$L0']
+		],
+		'replace' => [
+			["string.split", '$L0', '$P2', '$P3'],
+			["size", '$L1', '$L0'],
+			["set", '$L2', 0],
+			["if<than", '$L2', '$L1', 7],
+			["get", '$L5', '$L0', '$L2'],
+			["if==than", '$L2', 0, 2],
+			["set", '$L4', '$L5'],
+			["jumpRel", 1],
+			["string.concat", '$L4', '$L4', '$P4', '$L5'],
+			["math.add", '$L2', '$L2', 1],
+			["jumpRel", -8],
+			["set", '$P1', '$L4']
+		],
+		'encodeObjectName' => [
+			["callFunc", "replace", '$P0', '$L1', '$P2', "’", "\'"],
+			["string.urlEncode", '$P1', '$L1']
 		]
 	];
 
