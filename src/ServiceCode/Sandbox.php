@@ -206,10 +206,10 @@ class Sandbox{
                 $reference = $value;
                 array_push($variables, $reference);
             } else if (count($variables) > $varIdx) {
-                $variables[$varIdx] = &$value;
+                $variables[$varIdx] = $value;
             } else if (count($variables) + Sandbox::$LIST_MAX_ADD_JUMP_ALLOWED > $varIdx) {
                 $sizeAux = count($variables);
-                for ($i = 0; $i < ($varIdx - $sizeAux + 1); $i++) {array_push($variables, null);} // do we need curly braces here?
+                for ($i = 0; $i < ($varIdx - $sizeAux + 1); $i++) {array_push($variables, null);}
                 $variables[$varIdx] = &$value;
             } else {
                 throw new InternalError("Could not decode variable " . join(':',  $varAddressParts));
