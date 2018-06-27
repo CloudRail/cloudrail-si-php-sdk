@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "^3.10",
+        "cloudrail/library-php": "^1.0"
+    }
+}
