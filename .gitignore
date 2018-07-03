@@ -1,5 +1,6 @@
-
-# Created by https://www.gitignore.io/api/composer,phpstorm
+### Custom ###
+/build/product/
+/build/staging/
 
 ### Composer ###
 composer.phar
