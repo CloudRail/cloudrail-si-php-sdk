@@ -1,4 +1,4 @@
-![Packagist](https://img.shields.io/packagist/v/CloudRail/library-php.svg)
+.![Packagist](https://img.shields.io/packagist/v/CloudRail/library-php.svg)
 <p align="center">
   <img width="200px" src="http://cloudrail.github.io/img/cloudrail_logo_github.png"/>
 </p>
@@ -25,11 +25,11 @@ Full documentation can be found [here](https://cloudrail.com/integrations)
 ---
 ---
 
-With CloudRail, you can easily integrate external APIs into your application. 
-CloudRail provides abstracted interfaces that take several services and then exposes a developer-friendly API that uses common functions between all providers. 
+With CloudRail, you can easily integrate external APIs into your application.
+CloudRail provides abstracted interfaces that take several services and then exposes a developer-friendly API that uses common functions between all providers.
 This means that, for example, upload() works in exactly the same way for Dropbox as it does for Google Drive, OneDrive, and other Cloud Storage Services, and getEmail() works similarly the same way across all social networks.
 
-## Composer
+## Composer Installation
 
 ```
 php7 composer.phar require cloudrail/library-php
@@ -40,6 +40,19 @@ After installing, you need to require Composer's autoloader:
 ```php
 require 'vendor/autoload.php';
 ```
+## Manual Installation
+
+* Include the **CloudRail phar file** into your project (there is already a version inside build directory of this repository)
+* As a dependency of CloudRail you should also include the **GuzzleHttp library**, either with composer or manually, more info in [Guzzle GitHub](https://github.com/guzzle/guzzle)  repository or [Official Documentation](http://docs.guzzlephp.org/en/stable/).
+* Load GuzzleHttp in your project. (**important**)
+* Load CloudRail in your project using the follow `require`:
+
+```php
+//After loading GuzzleHttp
+include_once 'phar://' . [PATH_TO_CLOUDRAIL_PHAR]. '/CloudRail.phar/autoloader.php';
+```
+
+
 
 ## Current Interfaces
 | Interface              | Included Services                        |
@@ -387,7 +400,7 @@ Head over to https://developers.cloudrail.com
 
 ## Pricing
 
-Learn more about our pricing on https://cloudrail.com/cloudrail-pricing/ 
+Learn more about our pricing on https://cloudrail.com/cloudrail-pricing/
 
 ## Other Platforms
 
