@@ -23,6 +23,6 @@
     }
   },
   "archive": {
-    "exclude": ["/test", "/lib", "/build", "/test_service", "/vendor"]
+    "exclude": ["/test", "/lib/", "/build/", "/test_service", "/vendor"]
   }
 }

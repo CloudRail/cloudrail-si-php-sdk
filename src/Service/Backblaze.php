@@ -315,7 +315,7 @@ class Backblaze implements BusinessCloudStorage, AdvancedRequestSupporter
 			["if!=than", '$P2.appendAuthorization', 0, 2],
 			["callFunc", "checkAuthentication", '$P0'],
 			["set", '$L0.requestHeaders.Authorization', '$S0.authorizationToken'],
-			["if!=than", "P2.body", NULL, 6],
+			["if!=than", '$P2.body', NULL, 6],
 			["if==than", '$L0.requestHeaders.Content-Length', NULL, 5],
 			["jumpRel", 1],
 			["if==than", '$L0.requestHeaders.content-length', NULL, 3],

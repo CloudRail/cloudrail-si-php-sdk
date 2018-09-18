@@ -31,8 +31,15 @@ This means that, for example, upload() works in exactly the same way for Dropbox
 
 ## Composer Installation
 
+For more instructions about the **Composer** package manager, or its installation instructions, check the offical [website](https://getcomposer.org/). With Composer **properly available** on development, use the command:
+
 ```
-php7 composer.phar require cloudrail/library-php
+php composer.phar require cloudrail/library-php
+```
+or
+
+```
+php composer require cloudrail/library-php
 ```
 
 After installing, you need to require Composer's autoloader:
@@ -51,7 +58,6 @@ require 'vendor/autoload.php';
 //After loading GuzzleHttp
 include_once 'phar://' . [PATH_TO_CLOUDRAIL_PHAR]. '/CloudRail.phar/autoloader.php';
 ```
-
 
 
 ## Current Interfaces
@@ -374,16 +380,34 @@ More interfaces are coming soon.
 
 * Direct Data: Everything happens directly in the Library. No data ever passes a CloudRail server.
 
-## Composer
+## Composer Installation
+
+For more instructions about the **Composer** package manager, or its installation instructions, check the offical [website](https://getcomposer.org/). With Composer **properly available** on development, use the command:
 
 ```
-php7 composer.phar require cloudrail/library-php
+php composer.phar require cloudrail/library-php
+```
+or
+
+```
+php composer require cloudrail/library-php
 ```
 
 After installing, you need to require Composer's autoloader:
 
 ```php
 require 'vendor/autoload.php';
+```
+## Manual Installation
+
+* Include the **CloudRail phar file** into your project (there is already a version inside build directory of this repository)
+* As a dependency of CloudRail you should also include the **GuzzleHttp library**, either with composer or manually, more info in [Guzzle GitHub](https://github.com/guzzle/guzzle)  repository or [Official Documentation](http://docs.guzzlephp.org/en/stable/).
+* Load GuzzleHttp in your project. (**important**)
+* Load CloudRail in your project using the follow `require`:
+
+```php
+//After loading GuzzleHttp
+include_once 'phar://' . [PATH_TO_CLOUDRAIL_PHAR]. '/CloudRail.phar/autoloader.php';
 ```
 
 ## Examples

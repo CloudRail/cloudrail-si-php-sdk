@@ -8,3 +8,4 @@
 /.github/               export-ignore
 .gitignore              export-ignore
 /examples/              export-ignore
+/lib/                   export-ignore

@@ -21,6 +21,6 @@ To run the project simple run the command.
 
     php -S localhost:8080
 
-<!-- Now you can perform authentication through the endpoint `/auth/Dropbox`  and `/auth/GoogleDrive` -->
+Now you can perform authentication through the endpoint `/auth/Dropbox`  and `/auth/GoogleDrive`
 
 That's it! Now go build something cool.
